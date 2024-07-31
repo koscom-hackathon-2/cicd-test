@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - '8080:80' # 호스트 포트:컨테이너 포트
+    volumes:
+      - .:/code
+      # - .venv:/code/.venv
