@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web:
+    image: soul4927/cicd-test
+    build: .
+    ports:
+      - '8080:80' # 호스트 포트:컨테이너 포트
+    volumes:
+      - .:/code
+      # - .venv:/code/.venv

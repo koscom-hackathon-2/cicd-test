@@ -31,11 +31,11 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
 
-            cd /home/ubuntu/
+            cd ~
 
             ## docker-compose 실행
             sudo chmod 666 /var/run/docker.sock
             sudo docker rm -f $(docker ps -qa)
             sudo docker pull soul4927/cicd-test
-            docker compose up --build -d
+            docker compose -f docker-compose-prod.yml up -d
             docker image prune -f
